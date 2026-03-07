@@ -344,6 +344,94 @@
         .glow-sweep {
             animation: shineSweep 2.5s ease-in-out 0.8s forwards;
         }
+
+        /* Mobile Fixes */
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav .flex.justify-between.h-20.items-center {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+                width: 100%;
+                height: auto;
+            }
+
+            nav h1 {
+                font-size: 13px !important;
+                max-width: 60% !important;
+            }
+
+            nav .flex.items-center.gap-6>button {
+                flex-shrink: 0;
+            }
+
+            #hero>.relative.z-10.max-w-7xl,
+            #hero .max-w-\[600px\] {
+                /* hero container */
+                padding: 24px 16px !important;
+                width: 100% !important;
+                overflow: hidden !important;
+            }
+
+            #hero h1 {
+                font-size: 28px !important;
+            }
+
+            #hero .flex.flex-wrap.gap-4 {
+                flex-direction: column;
+            }
+
+            #hero .flex.flex-wrap.gap-4>button {
+                width: 100%;
+                display: block;
+                margin-bottom: 12px;
+                text-align: center;
+                padding: 14px 20px;
+            }
+
+            #hero .bg-emergency-red {
+                font-size: 12px !important;
+                padding: 8px 12px !important;
+                max-width: 90% !important;
+            }
+
+            section {
+                padding: 60px 16px !important;
+                width: 100% !important;
+                overflow-x: hidden !important;
+            }
+
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                flex-direction: column !important;
+            }
+
+            .grid.lg\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+                flex-direction: column !important;
+            }
+
+            /* All grids (departments, why choose us, etc.): */
+            .grid.md\:grid-cols-3,
+            .grid.lg\:grid-cols-5,
+            .grid.lg\:grid-cols-4,
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
     </style>
 </head>
 
@@ -367,8 +455,8 @@
 
 
 
-                <div class="flex items-center gap-6">
-                    <div class="hidden lg:flex items-center gap-6">
+                <div class="flex items-center gap-3 md:gap-6">
+                    <div class="hidden md:flex items-center gap-6">
 
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Services</a>
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Find Doctor</a>
@@ -377,11 +465,27 @@
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact Us</a>
 
                     </div>
+                    <button id="mobile-menu-toggle"
+                        class="md:hidden text-navy-dark focus:outline-none flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[28px]">menu</span>
+                    </button>
                     <button
-                        class="bg-primary hover:bg-opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md pulse-cta">
+                        class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg text-sm font-bold transition-all shadow-md pulse-cta shrink-0">
                         Book Now
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-dropdown"
+            class="hidden absolute top-full left-0 w-full bg-[#2eb8a3] text-white shadow-lg overflow-hidden md:hidden z-40">
+            <div class="flex flex-col">
+                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Services</a>
+                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Find Doctor</a>
+                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Patient
+                    Care</a>
+                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">About Us</a>
+                <a class="block px-6 py-4 font-bold hover:bg-white/10" href="#">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -395,7 +499,7 @@
                 <div class="absolute inset-0 bg-[rgba(0,0,0,0.55)]"></div>
             </div>
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div class="max-w-[600px] text-left">
+                <div class="max-max-w-[600px] w-full text-left">
                     <div
                         class="inline-flex items-center gap-2 bg-emergency-red text-white px-4 py-1.5 rounded-full text-sm font-bold mb-10 animate-pulse">
                         <span class="material-symbols-outlined text-sm">emergency</span>
@@ -864,9 +968,9 @@
 
                 <!-- Row 2: 2 cards centered -->
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 relative z-10 mt-6 lg:mt-8 max-w-full lg:max-w-[880px] mx-auto">
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 relative z-10 mt-6 lg:mt-8 max-w-full lg:max-max-w-[880px] w-full mx-auto">
                     <!-- Card 4 -->
-                    <div class="w-full lg:max-w-[420px] mx-auto flex flex-col text-left bg-[rgba(255,255,255,0.04)] border border-[rgba(46,181,160,0.2)] rounded-xl py-[36px] px-[28px] relative group hover:bg-[rgba(46,181,160,0.08)] hover:border-[rgba(46,181,160,0.7)] hover:-translate-y-[6px] transition-all duration-300 reveal-on-scroll translate-y-[25px] overflow-hidden shadow-lg h-full"
+                    <div class="w-full lg:max-max-w-[420px] w-full mx-auto flex flex-col text-left bg-[rgba(255,255,255,0.04)] border border-[rgba(46,181,160,0.2)] rounded-xl py-[36px] px-[28px] relative group hover:bg-[rgba(46,181,160,0.08)] hover:border-[rgba(46,181,160,0.7)] hover:-translate-y-[6px] transition-all duration-300 reveal-on-scroll translate-y-[25px] overflow-hidden shadow-lg h-full"
                         style="transition-delay: 0.32s;">
                         <div
                             class="absolute left-0 top-[50%] w-[4px] bg-primary h-0 transition-all duration-[1.2s] ease-out accent-bar -translate-y-[50%]">
@@ -887,7 +991,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="w-full lg:max-w-[420px] mx-auto flex flex-col text-left bg-[rgba(255,255,255,0.04)] border border-[rgba(46,181,160,0.2)] rounded-xl py-[36px] px-[28px] relative group hover:bg-[rgba(46,181,160,0.08)] hover:border-[rgba(46,181,160,0.7)] hover:-translate-y-[6px] transition-all duration-300 reveal-on-scroll translate-y-[25px] overflow-hidden shadow-lg h-full"
+                    <div class="w-full lg:max-max-w-[420px] w-full mx-auto flex flex-col text-left bg-[rgba(255,255,255,0.04)] border border-[rgba(46,181,160,0.2)] rounded-xl py-[36px] px-[28px] relative group hover:bg-[rgba(46,181,160,0.08)] hover:border-[rgba(46,181,160,0.7)] hover:-translate-y-[6px] transition-all duration-300 reveal-on-scroll translate-y-[25px] overflow-hidden shadow-lg h-full"
                         style="transition-delay: 0.40s;">
                         <div
                             class="absolute left-0 top-[50%] w-[4px] bg-primary h-0 transition-all duration-[1.2s] ease-out accent-bar -translate-y-[50%]">
@@ -1149,7 +1253,7 @@
                     <div class="carousel-track flex w-max animate-scroll-left">
                         <div class="flex gap-6 pr-6">
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1178,7 +1282,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1207,7 +1311,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1236,7 +1340,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1265,7 +1369,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1294,7 +1398,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1323,7 +1427,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1352,7 +1456,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1381,7 +1485,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1410,7 +1514,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1441,7 +1545,7 @@
                         </div>
                         <div class="flex gap-6 pr-6">
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1470,7 +1574,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1499,7 +1603,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1528,7 +1632,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1557,7 +1661,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1586,7 +1690,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1615,7 +1719,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1644,7 +1748,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1673,7 +1777,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1702,7 +1806,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1739,7 +1843,7 @@
                     <div class="carousel-track flex w-max animate-scroll-right">
                         <div class="flex gap-6 pr-6">
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1768,7 +1872,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1797,7 +1901,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1826,7 +1930,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1855,7 +1959,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1884,7 +1988,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1913,7 +2017,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1942,7 +2046,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -1971,7 +2075,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2000,7 +2104,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2031,7 +2135,7 @@
                         </div>
                         <div class="flex gap-6 pr-6">
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2060,7 +2164,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2089,7 +2193,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2118,7 +2222,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2147,7 +2251,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2176,7 +2280,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2205,7 +2309,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2234,7 +2338,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2263,7 +2367,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2292,7 +2396,7 @@
                                 </div>
                             </div>
                             <div
-                                class="w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
+                                class="w-full md:w-[320px] min-h-[200px] shrink-0 bg-[rgba(255,255,255,0.06)] border border-[rgba(46,181,160,0.25)] backdrop-blur-[10px] rounded-[16px] p-[28px_24px] flex flex-col transition-all duration-300 hover:border-primary hover:scale-[1.02] overflow-hidden relative group/card">
                                 <div class="flex justify-between items-start mb-4 relative z-10">
                                     <div class="text-[#FFD700] text-[18px] tracking-widest leading-none">★★★★★</div>
                                     <div
@@ -2886,6 +2990,22 @@
                 }
             }
             requestAnimationFrame(update);
+        }
+    </script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+        if (mobileMenuToggle && mobileDropdown) {
+            mobileMenuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (e) => {
+                if (!mobileDropdown.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mobileDropdown.classList.add('hidden');
+                }
+            });
         }
     </script>
 </body>
