@@ -344,94 +344,6 @@
         .glow-sweep {
             animation: shineSweep 2.5s ease-in-out 0.8s forwards;
         }
-
-        /* Mobile Fixes */
-        * {
-            box-sizing: border-box;
-            max-width: 100%;
-        }
-
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        @media (max-width: 768px) {
-            nav .flex.justify-between.h-20.items-center {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 16px;
-                width: 100%;
-                height: auto;
-            }
-
-            nav h1 {
-                font-size: 13px !important;
-                max-width: 60% !important;
-            }
-
-            nav .flex.items-center.gap-6>button {
-                flex-shrink: 0;
-            }
-
-            #hero>.relative.z-10.max-w-7xl,
-            #hero .max-w-\[600px\] {
-                /* hero container */
-                padding: 24px 16px !important;
-                width: 100% !important;
-                overflow: hidden !important;
-            }
-
-            #hero h1 {
-                font-size: 28px !important;
-            }
-
-            #hero .flex.flex-wrap.gap-4 {
-                flex-direction: column;
-            }
-
-            #hero .flex.flex-wrap.gap-4>button {
-                width: 100%;
-                display: block;
-                margin-bottom: 12px;
-                text-align: center;
-                padding: 14px 20px;
-            }
-
-            #hero .bg-emergency-red {
-                font-size: 12px !important;
-                padding: 8px 12px !important;
-                max-width: 90% !important;
-            }
-
-            section {
-                padding: 60px 16px !important;
-                width: 100% !important;
-                overflow-x: hidden !important;
-            }
-
-            .grid.md\:grid-cols-2 {
-                grid-template-columns: 1fr !important;
-                flex-direction: column !important;
-            }
-
-            .grid.lg\:grid-cols-2 {
-                grid-template-columns: 1fr !important;
-                flex-direction: column !important;
-            }
-
-            /* All grids (departments, why choose us, etc.): */
-            .grid.md\:grid-cols-3,
-            .grid.lg\:grid-cols-5,
-            .grid.lg\:grid-cols-4,
-            .grid.lg\:grid-cols-3 {
-                grid-template-columns: 1fr 1fr !important;
-            }
-        }
     </style>
 </head>
 
@@ -455,8 +367,8 @@
 
 
 
-                <div class="flex items-center gap-3 md:gap-6">
-                    <div class="hidden md:flex items-center gap-6">
+                <div class="flex items-center gap-6">
+                    <div class="hidden lg:flex items-center gap-6">
 
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Services</a>
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Find Doctor</a>
@@ -465,27 +377,11 @@
                         <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact Us</a>
 
                     </div>
-                    <button id="mobile-menu-toggle"
-                        class="md:hidden text-navy-dark focus:outline-none flex items-center justify-center">
-                        <span class="material-symbols-outlined text-[28px]">menu</span>
-                    </button>
                     <button
-                        class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-lg text-sm font-bold transition-all shadow-md pulse-cta shrink-0">
+                        class="bg-primary hover:bg-opacity-90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md pulse-cta">
                         Book Now
                     </button>
                 </div>
-            </div>
-        </div>
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-dropdown"
-            class="hidden absolute top-full left-0 w-full bg-[#2eb8a3] text-white shadow-lg overflow-hidden md:hidden z-40">
-            <div class="flex flex-col">
-                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Services</a>
-                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Find Doctor</a>
-                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">Patient
-                    Care</a>
-                <a class="block px-6 py-4 border-b border-white/20 font-bold hover:bg-white/10" href="#">About Us</a>
-                <a class="block px-6 py-4 font-bold hover:bg-white/10" href="#">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -2990,22 +2886,6 @@
                 }
             }
             requestAnimationFrame(update);
-        }
-    </script>
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileDropdown = document.getElementById('mobile-dropdown');
-        if (mobileMenuToggle && mobileDropdown) {
-            mobileMenuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                mobileDropdown.classList.toggle('hidden');
-            });
-            document.addEventListener('click', (e) => {
-                if (!mobileDropdown.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                    mobileDropdown.classList.add('hidden');
-                }
-            });
         }
     </script>
 </body>
