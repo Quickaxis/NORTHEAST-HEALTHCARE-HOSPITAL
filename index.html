@@ -460,9 +460,10 @@
                         <div class="absolute -inset-y-4 -inset-x-4 border-l-4 border-primary rounded-xl -z-10"></div>
 
                         <img id="founder-photo"
-                            alt="Madhurjya Gogoi - Chairman &amp; Director, Northeast Healthcare &amp; Hospitals, Best Hospital in Dibrugarh Assam"
-                            class="relative rounded-xl shadow-2xl w-full h-[500px] object-cover"
-                            src="gallery/founderimage.jpg" />
+                            alt="Madhurjya Gogoi — Chairman & Director, Northeast Healthcare & Hospitals Dibrugarh"
+                            class="relative shadow-2xl"
+                            style="width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:12px; display:block;"
+                            src="gallery/ot unit/madhurjya.jpg" />
 
                         <div class="flex gap-3 mt-6">
                             <span class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md">
@@ -757,6 +758,367 @@
                 </div>
             </div>
         </section>
+
+        <!-- Our Facilities & Surgeries -->
+        <section id="facilities" class="pt-[100px] pb-[80px] bg-cream-bg overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-[48px] w-full reveal-on-scroll translate-y-[25px]">
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase block mb-3">INSIDE NEH</span>
+                    <h2 class="serif-heading text-4xl mb-4">Our Facilities &amp; Surgeries</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6 heading-underline"></div>
+                    <p class="text-slate-500 max-w-2xl mx-auto">World-class infrastructure built for precision, safety
+                        and exceptional patient outcomes.</p>
+                </div>
+
+                <div class="relative w-full max-w-[1200px] mx-auto flex items-center justify-center group"
+                    id="facilities-carousel-container">
+                    <!-- Carousel Track -->
+                    <div id="fac-track"
+                        class="flex overflow-x-auto gap-4 pb-8 pt-4 px-4 md:px-0 scroll-smooth snap-x snap-mandatory w-full hide-scrollbar"
+                        style="scrollbar-width: none; -ms-overflow-style: none;">
+                        <!-- Card 1 -->
+                        <div class="fac-card flex-shrink-0 w-[85vw] md:flex-1 md:w-auto md:min-w-0 rounded-[16px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] bg-navy-dark snap-center cursor-pointer relative reveal-on-scroll transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] flex flex-col"
+                            style="transition-delay: 0.08s;">
+                            <div class="h-[220px] w-full bg-navy-dark relative group/card overflow-hidden">
+                                <div id="ot-slides" class="w-full h-full flex transition-transform duration-300">
+                                    <img src="gallery/ot unit/ot.jpg" alt="OT Surgical Suite"
+                                        style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                    <img src="gallery/ot unit/ot2.jpg" alt="Operation Theatre"
+                                        style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                </div>
+                                <button
+                                    onclick="event.stopPropagation(); document.getElementById('ot-slides').style.transform='translateX(0%)'; document.querySelectorAll('.ot-dot')[0].classList.add('bg-primary'); document.querySelectorAll('.ot-dot')[0].classList.remove('bg-white/50'); document.querySelectorAll('.ot-dot')[1].classList.remove('bg-primary'); document.querySelectorAll('.ot-dot')[1].classList.add('bg-white/50');"
+                                    class="absolute left-2 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-primary z-10 transition-colors">
+                                    <span class="material-symbols-outlined" style="font-size: 20px;">chevron_left</span>
+                                </button>
+                                <button
+                                    onclick="event.stopPropagation(); document.getElementById('ot-slides').style.transform='translateX(-100%)'; document.querySelectorAll('.ot-dot')[1].classList.add('bg-primary'); document.querySelectorAll('.ot-dot')[1].classList.remove('bg-white/50'); document.querySelectorAll('.ot-dot')[0].classList.remove('bg-primary'); document.querySelectorAll('.ot-dot')[0].classList.add('bg-white/50');"
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center text-primary z-10 transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size: 20px;">chevron_right</span>
+                                </button>
+                                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+                                    <div class="ot-dot w-[6px] h-[6px] rounded-full bg-primary transition-colors">
+                                    </div>
+                                    <div class="ot-dot w-[6px] h-[6px] rounded-full bg-white/50 transition-colors">
+                                    </div>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-[#0D1B2A]/50 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[32px]">search</span>
+                                </div>
+                            </div>
+                            <div class="bg-white px-[20px] py-[18px] border-t-2 border-primary flex-1">
+                                <h3 class="text-[15px] font-bold text-navy-dark leading-tight">OT / Surgical Suite</h3>
+                                <p class="text-[12px] text-primary mt-1">Advanced Operating Theatre Complex</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="fac-card flex-shrink-0 w-[85vw] md:flex-1 md:w-auto md:min-w-0 rounded-[16px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] bg-navy-dark snap-center cursor-pointer relative reveal-on-scroll transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] flex flex-col"
+                            style="transition-delay: 0.16s;">
+                            <div
+                                class="h-[220px] w-full bg-navy-dark relative flex flex-col items-center justify-center group/card">
+                                <img src="gallery/ot unit/icu.jpg" alt="Recovery Ward ICU — Northeast Healthcare"
+                                    style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                <div
+                                    class="absolute inset-0 bg-[#0D1B2A]/50 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[32px]">search</span>
+                                </div>
+                            </div>
+                            <div class="bg-white px-[20px] py-[18px] border-t-2 border-primary flex-1">
+                                <h3 class="text-[15px] font-bold text-navy-dark leading-tight">Recovery Ward / ICU</h3>
+                                <p class="text-[12px] text-primary mt-1">Post-Op & Intensive Care Unit</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="fac-card flex-shrink-0 w-[85vw] md:flex-1 md:w-auto md:min-w-0 rounded-[16px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] bg-navy-dark snap-center cursor-pointer relative reveal-on-scroll transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] flex flex-col"
+                            style="transition-delay: 0.24s;">
+                            <div
+                                class="h-[220px] w-full bg-navy-dark relative flex flex-col items-center justify-center group/card">
+                                <img src="gallery/ot unit/diagnostic.jpg"
+                                    alt="Diagnostic Centre Northeast Healthcare Hospitals Dibrugarh"
+                                    style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                <div
+                                    class="absolute inset-0 bg-[#0D1B2A]/50 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[32px]">search</span>
+                                </div>
+                            </div>
+                            <div class="bg-white px-[20px] py-[18px] border-t-2 border-primary flex-1">
+                                <h3 class="text-[15px] font-bold text-navy-dark leading-tight">Diagnostic Centre</h3>
+                                <p class="text-[12px] text-primary mt-1">State-of-the-Art Imaging</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="fac-card flex-shrink-0 w-[85vw] md:flex-1 md:w-auto md:min-w-0 rounded-[16px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] bg-navy-dark snap-center cursor-pointer relative reveal-on-scroll transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] flex flex-col"
+                            style="transition-delay: 0.32s;">
+                            <div
+                                class="h-[220px] w-full bg-navy-dark relative flex flex-col items-center justify-center group/card">
+                                <img src="gallery/ot unit/emergency.jpg"
+                                    alt="Emergency Unit Northeast Healthcare Hospitals Dibrugarh"
+                                    style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                <div
+                                    class="absolute inset-0 bg-[#0D1B2A]/50 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[32px]">search</span>
+                                </div>
+                            </div>
+                            <div class="bg-white px-[20px] py-[18px] border-t-2 border-primary flex-1">
+                                <h3 class="text-[15px] font-bold text-navy-dark leading-tight">Emergency Unit</h3>
+                                <p class="text-[12px] text-primary mt-1">24/7 Emergency Ready</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="fac-card flex-shrink-0 w-[85vw] md:flex-1 md:w-auto md:min-w-0 rounded-[16px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.15)] bg-navy-dark snap-center cursor-pointer relative reveal-on-scroll transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] flex flex-col"
+                            style="transition-delay: 0.40s;">
+                            <div
+                                class="h-[220px] w-full bg-navy-dark relative flex flex-col items-center justify-center group/card">
+                                <img src="gallery/ot unit/pharmacy.jpg"
+                                    alt="In-House Pharmacy Northeast Healthcare Hospitals Dibrugarh"
+                                    style="width:100%; height:100%; object-fit:cover; object-position:center;">
+                                <div
+                                    class="absolute inset-0 bg-[#0D1B2A]/50 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[32px]">search</span>
+                                </div>
+                            </div>
+                            <div class="bg-white px-[20px] py-[18px] border-t-2 border-primary flex-1">
+                                <h3 class="text-[15px] font-bold text-navy-dark leading-tight">Pharmacy</h3>
+                                <p class="text-[12px] text-primary mt-1">In-House Medical Store</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Hide scrollbar style -->
+                    <style>
+                        .hide-scrollbar::-webkit-scrollbar {
+                            display: none;
+                        }
+                    </style>
+                </div>
+
+                <!-- Dot Indicators -->
+                <div class="flex md:hidden justify-center items-center gap-2 mt-6" id="fac-dots">
+                    <button
+                        class="fac-dot w-[28px] h-[10px] rounded-full bg-primary transition-all duration-300"></button>
+                    <button
+                        class="fac-dot w-[10px] h-[10px] rounded-full bg-[#CCCCCC] transition-all duration-300"></button>
+                    <button
+                        class="fac-dot w-[10px] h-[10px] rounded-full bg-[#CCCCCC] transition-all duration-300"></button>
+                    <button
+                        class="fac-dot w-[10px] h-[10px] rounded-full bg-[#CCCCCC] transition-all duration-300"></button>
+                    <button
+                        class="fac-dot w-[10px] h-[10px] rounded-full bg-[#CCCCCC] transition-all duration-300"></button>
+                </div>
+
+                <!-- Bottom Follow Link -->
+                <div class="text-center mt-12 w-full reveal-on-scroll translate-y-[15px]"
+                    style="transition-delay: 0.5s;">
+                    <p class="text-[13px] text-slate-500 mb-1">Follow us for more updates</p>
+                    <a href="https://www.instagram.com/nehealth_care" target="_blank" rel="noopener noreferrer"
+                        class="text-primary font-bold hover:text-navy-dark transition-colors inline-block">
+                        @nehealth_care ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="fac-lightbox"
+            class="fixed inset-0 z-[100] bg-[rgba(0,0,0,0.92)] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <button id="lb-close"
+                class="absolute top-6 right-6 text-white text-opacity-80 hover:text-opacity-100 transition-colors">
+                <span class="material-symbols-outlined text-[36px]">close</span>
+            </button>
+            <button id="lb-prev"
+                class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white text-opacity-80 hover:text-opacity-100 transition-colors">
+                <span class="material-symbols-outlined text-[48px]">chevron_left</span>
+            </button>
+            <div class="flex flex-col items-center max-w-[90vw] max-h-[90vh]">
+                <img id="lb-img" src="" alt="Facility"
+                    class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl hidden">
+                <div id="lb-placeholder"
+                    class="w-[300px] h-[300px] md:w-[600px] md:h-[400px] bg-navy-dark rounded-lg flex flex-col items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-[64px] mb-4">photo_camera</span>
+                    <span class="text-slate-400 text-sm">Photo Coming Soon</span>
+                </div>
+                <div id="lb-caption" class="text-white text-center mt-4">
+                    <h3 id="lb-title" class="text-lg font-bold"></h3>
+                    <p id="lb-sub" class="text-primary text-sm"></p>
+                </div>
+            </div>
+            <button id="lb-next"
+                class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white text-opacity-80 hover:text-opacity-100 transition-colors">
+                <span class="material-symbols-outlined text-[48px]">chevron_right</span>
+            </button>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const track = document.getElementById('fac-track');
+                const dots = document.querySelectorAll('.fac-dot');
+                const cards = document.querySelectorAll('.fac-card');
+
+                const updateCarousel = () => {
+                    if (!track) return;
+                    const scrollLeft = track.scrollLeft;
+                    const cardElement = Array.from(cards)[0];
+                    const cardWidth = cardElement ? cardElement.offsetWidth + 20 : 280;
+                    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+
+                    let activeIndex = Math.round(scrollLeft / cardWidth);
+                    if (activeIndex > cards.length - 1) activeIndex = cards.length - 1;
+                    if (activeIndex < 0) activeIndex = 0;
+
+                    dots.forEach((dot, index) => {
+                        if (index === activeIndex) {
+                            dot.style.width = '28px';
+                            dot.style.backgroundColor = '#2eb8a3'; // primary color
+                        } else {
+                            dot.style.width = '10px';
+                            dot.style.backgroundColor = '#CCCCCC';
+                        }
+                    });
+                };
+
+                if (track) {
+                    track.addEventListener('scroll', updateCarousel);
+                    window.addEventListener('resize', updateCarousel);
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            const cardWidth = cards[0].offsetWidth + 20;
+                            track.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                        });
+                    });
+
+                    setTimeout(updateCarousel, 100);
+                }
+
+                // Lightbox Logic
+                const lightbox = document.getElementById('fac-lightbox');
+                const lbImg = document.getElementById('lb-img');
+                const lbPlaceholder = document.getElementById('lb-placeholder');
+                const lbTitle = document.getElementById('lb-title');
+                const lbSub = document.getElementById('lb-sub');
+                const lbClose = document.getElementById('lb-close');
+                const lbPrev = document.getElementById('lb-prev');
+                const lbNext = document.getElementById('lb-next');
+
+                let currentLbIndex = 0;
+
+                const openLightbox = (index) => {
+                    currentLbIndex = index;
+                    const card = cards[index];
+                    const img = card.querySelector('img');
+                    const title = card.querySelector('h3').innerText;
+                    const sub = card.querySelector('p').innerText;
+
+                    if (img && img.src) {
+                        lbImg.src = img.src;
+                        lbImg.classList.remove('hidden');
+                        lbPlaceholder.classList.add('hidden');
+                    } else {
+                        lbImg.classList.add('hidden');
+                        lbImg.src = "";
+                        lbPlaceholder.classList.remove('hidden');
+                    }
+
+                    lbTitle.innerText = title;
+                    lbSub.innerText = sub;
+
+                    lightbox.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const closeLightbox = () => {
+                    lightbox.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                };
+
+                cards.forEach((card, index) => {
+                    card.addEventListener('click', () => openLightbox(index));
+                });
+
+                lbClose.addEventListener('click', closeLightbox);
+
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (!lightbox.classList.contains('opacity-0')) {
+                        if (e.key === 'ArrowRight') navigateLightbox(1);
+                        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                    }
+                });
+
+                const navigateLightbox = (dir) => {
+                    currentLbIndex += dir;
+                    if (currentLbIndex < 0) currentLbIndex = cards.length - 1;
+                    if (currentLbIndex >= cards.length) currentLbIndex = 0;
+                    openLightbox(currentLbIndex);
+                };
+
+                lbPrev.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateLightbox(-1);
+                });
+
+                lbNext.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateLightbox(1);
+                });
+            });
+        </script>
+
+        <!-- Our Hospital Banner -->
+        <section
+            class="w-full relative bg-navy-dark flex items-center justify-center overflow-hidden h-[250px] md:h-[350px] lg:h-[500px]">
+            <img src="hospital.jpg" alt="Northeast Healthcare & Hospitals — Dibrugarh Assam"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;z-index:0;">
+
+            <!-- Dark Gradient Overlay -->
+            <div class="absolute inset-0 pointer-events-none"
+                style="z-index: 1; background: linear-gradient(to bottom, rgba(13,27,42,0.3) 0%, rgba(13,27,42,0.6) 100%);">
+            </div>
+
+            <!-- Centered Text Overlay -->
+            <div class="relative flex flex-col items-center justify-center text-center px-4 w-full h-full"
+                style="z-index: 2;">
+                <span
+                    class="text-primary font-bold uppercase block mb-3 md:mb-4 reveal-on-scroll translate-y-[20px] transition-all duration-[600ms] opacity-0"
+                    style="letter-spacing: 3px; font-size: 13px; transition-delay: 0.15s;">DIBRUGARH, ASSAM</span>
+                <h2 class="serif-heading text-white text-[32px] md:text-[42px] lg:text-[52px] leading-tight mb-4 reveal-on-scroll translate-y-[20px] transition-all duration-[600ms] opacity-0"
+                    style="transition-delay: 0.30s;">Northeast Healthcare &amp; Hospitals</h2>
+                <div class="w-[60px] h-[1px] bg-white opacity-50 mx-auto mb-4 reveal-on-scroll translate-y-[20px] transition-all duration-[600ms] !opacity-0"
+                    style="transition-delay: 0.45s;" data-override-opacity="0.5"></div>
+                <p class="text-white opacity-85 text-[16px] reveal-on-scroll translate-y-[20px] transition-all duration-[600ms] !opacity-0"
+                    style="transition-delay: 0.60s;" data-override-opacity="0.85">Your Health Is Our Top Priority
+                    &middot; Est. 2024</p>
+            </div>
+
+            <style>
+                .reveal-on-scroll.active[data-override-opacity="0.5"] {
+                    opacity: 0.5 !important;
+                    transform: translateY(0);
+                }
+
+                .reveal-on-scroll.active[data-override-opacity="0.85"] {
+                    opacity: 0.85 !important;
+                    transform: translateY(0);
+                }
+
+                .reveal-on-scroll.active {
+                    opacity: 1 !important;
+                    transform: translateY(0);
+                }
+            </style>
+        </section>
+
         <!-- Super Speciality -->
         <section id="speciality" class="py-[100px] bg-navy-dark text-white relative overflow-hidden">
             <!-- Radial Glow Background -->
@@ -2670,8 +3032,16 @@
                     rights
                     reserved.</p>
                 <p class="md:flex-1 text-center text-[#2EB5A0] font-semibold tracking-[1px] uppercase text-[13px]">A
-                    unit of NHDPL</p>
-                <p class="md:flex-1 text-center md:text-right">Privacy Policy · Terms of Service</p>
+                    unit of NEHDPL</p>
+                <div class="md:flex-1 text-center md:text-right flex flex-col items-center md:items-end gap-1">
+                    <p>Privacy Policy · Terms of Service</p>
+                    <p class="text-[11px] text-[#667788]/60 mt-2 md:mt-0">
+                        Designed & Built by
+                        <span
+                            class="text-[#2EB5A0] font-[600] cursor-pointer hover:opacity-100 hover:underline transition-all">Octavium
+                            Core</span>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
